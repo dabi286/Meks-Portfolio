@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: #ffffff;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes gradient-move {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  animation: gradient-move 8s ease-in-out infinite;
+}
+
+@keyframes star-move-1 { 0%,100%{transform:translate(0,0);} 50%{transform:translate(10px, -8px);} }
+@keyframes star-move-2 { 0%,100%{transform:translate(0,0);} 50%{transform:translate(-12px, 6px);} }
+@keyframes star-move-3 { 0%,100%{transform:translate(0,0);} 50%{transform:translate(8px, 12px);} }
+@keyframes star-move-4 { 0%,100%{transform:translate(0,0);} 50%{transform:translate(-10px, -10px);} }
+@keyframes star-move-5 { 0%,100%{transform:translate(0,0);} 50%{transform:translate(6px, 8px);} }
+@keyframes star-move-6 { 0%,100%{transform:translate(0,0);} 50%{transform:translate(-8px, 10px);} }
+@keyframes star-move-7 { 0%,100%{transform:translate(0,0);} 50%{transform:translate(12px, -6px);} }
+@keyframes star-move-8 { 0%,100%{transform:translate(0,0);} 50%{transform:translate(-6px, -12px);} }
+
+.star-move-1 { animation-name: twinkle 4s ease-in-out infinite, star-move-1 8s ease-in-out infinite; }
+.star-move-2 { animation-name: twinkle, star-move-2; }
+.star-move-3 { animation-name: twinkle, star-move-3; }
+.star-move-4 { animation-name: twinkle, star-move-4; }
+.star-move-5 { animation-name: twinkle, star-move-5; }
+.star-move-6 { animation-name: twinkle, star-move-6; }
+.star-move-7 { animation-name: twinkle, star-move-7; }
+.star-move-8 { animation-name: twinkle, star-move-8; }
